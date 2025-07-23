@@ -1,6 +1,4 @@
 import { useCallback, useState, useRef, useEffect } from 'react'
-
-
 function PasswordGenerator(){
  const [length, setLength] = useState(8)
   const [numberAllowed, setNumberAllowed] = useState(false)
@@ -12,8 +10,12 @@ function PasswordGenerator(){
     let pass = ''
     let str = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
 
-    if (numberAllowed) str += '0123456789'
-    if (charAllowed) str += "~`!@#$%^&*()-_=+[]{}|;:',.<>?/"
+    if (numberAllowed) {
+      str += '0123456789'
+    }
+    if (charAllowed) {
+      str += "~`!@#$%^&*()-_=+[]{}|;:',.<>?/"
+    }
 
     for (let i = 0; i < length; i++) {
       let char = Math.floor(Math.random() * str.length + 1)

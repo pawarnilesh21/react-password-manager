@@ -18,7 +18,7 @@ function PasswordGenerator(){
     }
 
     for (let i = 0; i < length; i++) {
-      let char = Math.floor(Math.random() * str.length + 1)
+      let char = Math.floor(Math.random() * str.length)
       pass += str.charAt(char)
     }
     setPassword(pass)
@@ -88,7 +88,7 @@ useEffect(() => {
               max={100}
               value={length}
               className="w-2/3 accent-orange-500 cursor-pointer"
-              onChange={(e) => setLength(e.target.value)}
+              onChange={(e) => setLength(Number(e.target.value))}
             />
           </div>
 
